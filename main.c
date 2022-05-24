@@ -1,8 +1,9 @@
-#include <stdio.h>   // standart giris cikis islemleri  
-#include "raylib.h"  
-#include <stdlib.h>  // random islemler 
-#include <time.h>    
-#include <unistd.h>  // sleep 
+#include <stdio.h>    
+#include "raylib.h"    
+
+//#include <stdlib.h>  // random lib
+//#include <time.h>     
+//#include <unistd.h>  // for sleep 
 
 typedef struct Snake{
     int width ;
