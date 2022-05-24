@@ -1,2 +1,2 @@
-# snakeray
+# snake
 raylib projects
