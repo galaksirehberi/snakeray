@@ -99,29 +99,24 @@ void PrintFoods(Food *myfood){
     sonraki->sayi += 1;
     
     if(root->last_key_pressed == KEY_UP){        
-        yfark = -root->step; 
-        
+        yfark = -root->step;         
     }
 
     if(root->last_key_pressed == KEY_DOWN){
-        yfark = +root->step; 
-        
+        yfark = +root->step;         
     }
 
     if(root->last_key_pressed == KEY_LEFT){
-        xfark = -root->step; 
-        
+        xfark = -root->step;         
     }
 
     if(root->last_key_pressed == KEY_RIGHT){ 
-        xfark = +root->step; 
-        
+        xfark = +root->step;         
     }
-
+     
     sonraki->position_x += xfark;   
     sonraki->position_y += yfark;
-    return sonraki;
-    
+    return sonraki;    
   }
 
  Snake *nodeRemove(Snake *root){
@@ -179,9 +174,6 @@ void PrintFoods(Food *myfood){
             }     
             tmp = tmp->next;   
         }
-
-
-
         return true;
  }
 
@@ -210,19 +202,13 @@ void PrintFoods(Food *myfood){
     int Screen_width = 800;
     int Screen_height = 600;
     InitWindow(Screen_width, Screen_height, "Snake Game V.0.1 - 2022.03.10");
-
-
     root = CreateNode(&mysnake);
-   // printf("%d\n",root->sayi);
-
-
     SetTargetFPS(60);                // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
 
     // Main game loop
 
-   temp = NodeYarat(root,root);    
-
+   temp = NodeYarat(root,root);   
    myfood = foods(&myfood,Screen_width,Screen_height);  
 
    while (!WindowShouldClose())    // Detect window close button or ESC key
@@ -233,44 +219,37 @@ void PrintFoods(Food *myfood){
 
             if(IsKeyPressed(KEY_UP) && (*root).last_key_pressed!= KEY_DOWN){
                 (*root).last_key_pressed = KEY_UP;
-
             }
 
             if(IsKeyPressed(KEY_DOWN) && (*root).last_key_pressed!= KEY_UP){
-                (*root).last_key_pressed = KEY_DOWN;                
-            
+                (*root).last_key_pressed = KEY_DOWN;
             }
 
             if(IsKeyPressed(KEY_LEFT) && (*root).last_key_pressed!= KEY_RIGHT){
-                (*root).last_key_pressed = KEY_LEFT;                
-                    
+                (*root).last_key_pressed = KEY_LEFT;
             }
 
             if(IsKeyPressed(KEY_RIGHT) && (*root).last_key_pressed!= KEY_LEFT){
                (*root).last_key_pressed = KEY_RIGHT;
-                
             }
-
 
             printf("\nSon Eleman %d,%d\n",temp->position_x,temp->position_y);  
             bool boom = rangeOfMotion(temp,root,Screen_width,Screen_height);
             if(boom == false){
-
+                // TST
+                //  
               
             }else{
 
               temp = NodeYarat(temp,root);
               root = nodeRemove(root); 
-
             }
 
             // yilani 1 tık buyut , yemin konumunu degistir.
             if( abs(temp->position_x - myfood.position_x) <= temp->width  && abs(temp->position_y - myfood.position_y) <= temp->height ){  
                 temp = NodeYarat(temp,root);
-                myfood = foods(&myfood,Screen_width,Screen_height);  
-                
-            }
-            
+                myfood = foods(&myfood,Screen_width,Screen_height);                  
+            }           
 
             PrintList(root);
             PrintFoods(&myfood); 
@@ -279,15 +258,11 @@ void PrintFoods(Food *myfood){
             // Terminal Output => Snake Position
             // printf("x: %d ",(*root).position_x);   
             // printf("y: %d \n",(*root).position_y);  
-
-
-        EndDrawing();  
-        
+       
+        EndDrawing();          
     } 
 
     CloseWindow();
-
-   free(root);
-
+    free(root);
     return 0;
  }
