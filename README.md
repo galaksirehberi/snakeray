@@ -6,7 +6,7 @@ https://www.raylib.com/
 
 Makefile dosyasını oluşturmadım dileyen kodlar üzerinde geliştirme yapabilir kendi makefile dosyanızı oluşturup raylib kütüphanesini modül olarak yüklerseniz projeyi çalıştırabilirsiniz.
 
-Temel olarak Linked List örneğidir. Yeni başlayan arkadaşlar için Linked list e güzel bir örnek.
+Yılan Linked List yapıda hareket eder.
 
 Geliştirken Kullandığım araçlar ,  C17, Raylib, gcc, gdb
 
