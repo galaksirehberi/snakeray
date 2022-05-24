@@ -28,10 +28,10 @@ typedef struct Food{
 Snake *CreateNode(Snake *previous){
     Snake *node;
     node = (Snake *)malloc(sizeof(Snake));
-    node->color = (*previous).color;
+    node->color  = (*previous).color;
     node->height = (*previous).height;
-    node->width = (*previous).width;
-    node->sayi = (*previous).sayi;
+    node->width  = (*previous).width;
+    node->sayi   = (*previous).sayi;
     node->position_x = (*previous).position_x;
     node->position_y = (*previous).position_y;
     node->step = (*previous).step;   
